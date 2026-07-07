@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>おえかきくるま | 描いたクルマが、走り出す。創造力を育む知育お絵描きアプリ</title>
+<meta name="description" content="お子さまが自由に描いたクルマに、タイヤがついて走り出す。「自分の絵が動く」体験を通して、創造力・考える力・自己肯定感を育む幼児向け知育アプリ。近日公開！">
+<meta property="og:title" content="おえかきくるま | 描いたクルマが、走り出す。">
+<meta property="og:description" content="自由なお絵描きが、そのまま走るクルマに。創造力と考える力を育む幼児向け知育アプリ。近日公開！">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-icon">🖍️</span>
+      <span class="logo-text">おえかきくるま</span>
+    </a>
+    <nav class="nav">
+      <a href="#growth">育つ力</a>
+      <a href="#howto">遊びかた</a>
+      <a href="#features">特徴</a>
+      <a href="#demo">体験する</a>
+      <a href="#parents">安心設計</a>
+    </nav>
+    <a class="header-cta" href="#cta">近日公開</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-badge">🚗 3歳からの 知育 × お絵描きアプリ</p>
+      <h1 class="hero-title">
+        描いたクルマが、<br>
+        <span class="accent">走り出す！</span>
+      </h1>
+      <p class="hero-sub">
+        お手本なし、正解なし。お子さまが自由に描いたクルマに<br>
+        タイヤがついて出発。「自分の絵が動く」ワクワクが、<br>
+        創造力と考える力を育てます。
+      </p>
+      <div class="store-badges">
+        <div class="store-badge coming">
+          <span class="store-icon">▶</span>
+          <span class="store-text"><small>Google Play</small><strong>近日公開</strong></span>
+        </div>
+        <div class="store-badge coming soon2">
+          <span class="store-icon"></span>
+          <span class="store-text"><small>App Store</small><strong>準備中</strong></span>
+        </div>
+      </div>
+      <p class="hero-note">※ 現在開発中です。公開までもうしばらくお待ちください。</p>
+    </div>
+
+    <!-- スマホモックアップ（ゲーム画面再現） -->
+    <div class="hero-phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="game-hud">
+            <div class="timer-pill">
+              <span class="timer-icon">⏱</span>
+              <span class="timer-bar"><span class="timer-fill"></span></span>
+              <span class="timer-num" id="timerNum">20</span>
+            </div>
+            <div class="dist-badge">🚗 <span id="distNum">0</span>m</div>
+          </div>
+          <div class="game-sky">
+            <div class="cloud c1"></div>
+            <div class="cloud c2"></div>
+            <div class="cloud c3"></div>
+            <!-- 地面の仕掛け(実ゲームの再現: コブ・水たまり・落ち葉・砂場) -->
+            <div class="obstacle ob-bump"></div>
+            <div class="obstacle ob-puddle"></div>
+            <div class="obstacle ob-leaves"><i></i><i></i><i></i></div>
+            <div class="obstacle ob-sand"></div>
+            <div class="hero-car">
+              <svg viewBox="0 0 220 150" width="100%" height="100%" aria-label="てがきのくるま">
+                <!-- 手描き風の車体 -->
+                <path class="car-body" d="M28 108 C24 78, 30 60, 48 52 C70 42, 96 30, 122 34 C150 38, 172 52, 184 70 C194 86, 196 100, 190 108"
+                      fill="none" stroke="#B71C1C" stroke-width="13" stroke-linecap="round"/>
+                <path class="car-body-in" d="M28 108 C24 78, 30 60, 48 52 C70 42, 96 30, 122 34 C150 38, 172 52, 184 70 C194 86, 196 100, 190 108"
+                      fill="none" stroke="#E53935" stroke-width="8" stroke-linecap="round"/>
+                <path d="M28 108 L190 108" stroke="#B71C1C" stroke-width="13" stroke-linecap="round"/>
+                <path d="M28 108 L190 108" stroke="#E53935" stroke-width="8" stroke-linecap="round"/>
+                <!-- まど -->
+                <path d="M70 58 C90 46, 118 44, 140 52" fill="none" stroke="#1E88E5" stroke-width="8" stroke-linecap="round"/>
+                <!-- 車輪(SMILで回転) -->
+                <g transform="translate(62 112)">
+                  <g>
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.7s" repeatCount="indefinite"/>
+                    <circle r="24" fill="#263238"/><circle r="16" fill="#546E7A"/>
+                    <g stroke="#CFD8DC" stroke-width="4">
+                      <line x1="-14" y1="0" x2="14" y2="0"/><line x1="0" y1="-14" x2="0" y2="14"/>
+                      <line x1="-10" y1="-10" x2="10" y2="10"/><line x1="-10" y1="10" x2="10" y2="-10"/>
+                    </g>
+                    <circle r="5" fill="#ECEFF1"/>
+                  </g>
+                </g>
+                <g transform="translate(158 112)">
+                  <g>
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.7s" repeatCount="indefinite"/>
+                    <circle r="24" fill="#263238"/><circle r="16" fill="#546E7A"/>
+                    <g stroke="#CFD8DC" stroke-width="4">
+                      <line x1="-14" y1="0" x2="14" y2="0"/><line x1="0" y1="-14" x2="0" y2="14"/>
+                      <line x1="-10" y1="-10" x2="10" y2="10"/><line x1="-10" y1="10" x2="10" y2="-10"/>
+                    </g>
+                    <circle r="5" fill="#ECEFF1"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div class="game-ground">
+              <div class="grass"></div>
+              <div class="soil"></div>
+            </div>
+          </div>
+          <div class="game-buttons">
+            <button class="jump-btn" type="button">↑ ぐーんと！</button>
+            <span class="retry-btn">↻ やりなおす</span>
+          </div>
+        </div>
+      </div>
+      <div class="phone-shadow"></div>
+    </div>
+  </div>
+  <div class="hero-wave"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,48 C240,88 480,8 720,40 C960,72 1200,20 1440,52 L1440,90 L0,90 Z" fill="#FFF8F0"/></svg></div>
+</section>
+
+<!-- ============ GROWTH ============ -->
+<section class="section growth" id="growth">
+  <h2 class="section-title"><span class="title-deco">🌱</span> 「自分の絵が動く」体験が、4つの力を育てる</h2>
+  <p class="section-lead">ただ描くだけでも、ただ遊ぶだけでもない。<br>「描く → 動かす → 工夫してまた描く」のくり返しが、遊びながらの学びになります。</p>
+  <div class="growth-grid">
+    <div class="growth-card">
+      <div class="growth-icon">
+        <img src="assets/growth/creativity.png" alt="クレヨンが虹色の波線を描いているイラスト" loading="lazy">
+      </div>
+      <h3>創造力</h3>
+      <p>お手本も「正解の形」もありません。まるいクルマ、ながーいクルマ、へんてこなクルマ、ぜんぶ大正解。白いキャンバスに自由に描く経験が、発想の土台をつくります。</p>
+    </div>
+    <div class="growth-card">
+      <div class="growth-icon">
+        <img src="assets/growth/thinking.png" alt="ひらめきの電球と歯車のイラスト" loading="lazy">
+      </div>
+      <h3>考える力（試行錯誤）</h3>
+      <p>物理エンジン搭載だから、描いた形によって走り方が本当に変わります。「今度は車体を低くしてみよう」——描いては走らせるくり返しが、仮説と実験のサイクルそのものです。</p>
+    </div>
+    <div class="growth-card">
+      <div class="growth-icon">
+        <img src="assets/growth/confidence.png" alt="金の王冠ときらめきのイラスト" loading="lazy">
+      </div>
+      <h3>自己肯定感</h3>
+      <p>自分の作品がその場で動き出す驚き。記録を更新すれば王冠のお祝いが。「じぶんで作れた！」「できた！」の積み重ねが、自信につながります。</p>
+    </div>
+    <div class="growth-card">
+      <div class="growth-icon">
+        <img src="assets/growth/expression.png" alt="子供の手が指先で色とりどりの線を描いているイラスト" loading="lazy">
+      </div>
+      <h3>表現力と手先の発達</h3>
+      <p>指先で線を描く遊びは、鉛筆を持つ前の運筆あそびにもぴったり。色を選び、形をつくる中で、表現のレパートリーが自然に広がります。</p>
+    </div>
+  </div>
+  <p class="growth-note">親子で「どんな形が速いかな？」と話しながら遊ぶのもおすすめです。お子さまの発想に、きっと驚かされます。</p>
+</section>
+
+<!-- ============ HOW TO ============ -->
+<section class="section howto" id="howto">
+  <h2 class="section-title"><span class="title-deco">🖍️</span> 遊びかたは、かんたん3ステップ</h2>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-illust illust-draw">
+        <svg viewBox="0 0 200 140" width="100%">
+          <rect x="14" y="12" width="172" height="104" rx="14" fill="#fff" stroke="#FB8C00" stroke-width="5"/>
+          <path class="draw-anim" d="M50 90 C46 66 58 54 76 50 C98 44 122 44 140 54 C154 62 158 76 152 90 L50 90"
+                fill="none" stroke="#E53935" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="164" y="112" font-size="30">🖍️</text>
+        </svg>
+      </div>
+      <h3 class="step-title">自由に描く</h3>
+      <p class="step-text">指でクルマの車体をお絵描き。基本8色＋キラキラペンで、どんな形でもOK。</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-illust">
+        <svg viewBox="0 0 200 140" width="100%">
+          <rect x="0" y="104" width="200" height="10" rx="5" fill="#66BB6A"/>
+          <g class="mini-car-move">
+            <path d="M60 92 C56 70 66 58 84 54 C104 48 126 48 142 58 C154 66 158 78 152 92 L60 92" fill="none" stroke="#E53935" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <g transform="translate(78 96)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.6s" repeatCount="indefinite"/><circle r="12" fill="#263238"/><line x1="-8" y1="0" x2="8" y2="0" stroke="#CFD8DC" stroke-width="3"/><line x1="0" y1="-8" x2="0" y2="8" stroke="#CFD8DC" stroke-width="3"/></g></g>
+            <g transform="translate(134 96)"><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.6s" repeatCount="indefinite"/><circle r="12" fill="#263238"/><line x1="-8" y1="0" x2="8" y2="0" stroke="#CFD8DC" stroke-width="3"/><line x1="0" y1="-8" x2="0" y2="8" stroke="#CFD8DC" stroke-width="3"/></g></g>
+          </g>
+          <g stroke="#90CAF9" stroke-width="5" stroke-linecap="round">
+            <line x1="18" y1="66" x2="42" y2="66"/><line x1="10" y1="82" x2="38" y2="82"/>
+          </g>
+        </svg>
+      </div>
+      <h3 class="step-title">タイヤがついて走り出す</h3>
+      <p class="step-text">描いた絵がそのまま車体に。形の個性が走りに表れるので、毎回ちがう走りに。</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-illust">
+        <svg viewBox="0 0 200 140" width="100%">
+          <text x="100" y="52" text-anchor="middle" font-size="40" class="crown-bounce">👑</text>
+          <rect x="40" y="66" width="120" height="20" rx="10" fill="#FFD740"/>
+          <text x="100" y="81" text-anchor="middle" font-size="13" font-weight="bold" fill="#5D4037">1い 128m</text>
+          <rect x="50" y="92" width="100" height="16" rx="8" fill="#ECEFF1"/>
+          <text x="100" y="104" text-anchor="middle" font-size="11" fill="#607D8B">2い 96m</text>
+          <rect x="58" y="114" width="84" height="16" rx="8" fill="#ECEFF1"/>
+          <text x="100" y="126" text-anchor="middle" font-size="11" fill="#607D8B">3い 74m</text>
+        </svg>
+      </div>
+      <h3 class="step-title">記録に挑戦</h3>
+      <p class="step-text">20秒でどこまで走れるか挑戦。記録更新の「できた！」が次の一枚への意欲に。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="section features" id="features">
+  <h2 class="section-title"><span class="title-deco">✨</span> 飽きずに続く、遊びの工夫</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon"><img src="assets/features/pens.png" alt="カラフルなクレヨンのイラスト" loading="lazy"></div>
+      <h3>選ぶ楽しさのあるペン</h3>
+      <p>基本8色に加えて、金・銀・虹色の「キラキラ」、点線やハートの「とくべつ」ペンも。色選びから創作が始まります。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><img src="assets/features/course.png" alt="水たまりや落ち葉のある曲がりくねった道のイラスト" loading="lazy"></div>
+      <h3>毎回変わるコース</h3>
+      <p>コースは走るたびにランダム生成。落ち葉・水たまり・砂場など9種類の仕掛けが、毎回ちがう挑戦を用意します。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><img src="assets/features/jump.png" alt="ぴょんとジャンプする赤い車のイラスト" loading="lazy"></div>
+      <h3>操作はボタンひとつ</h3>
+      <p>走行中の操作は「ぐーんと！」のジャンプボタンだけ。小さなお子さまでも迷わず、でも奥は深い設計です。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><img src="assets/features/physics.png" alt="坂道を転がるタイヤのイラスト" loading="lazy"></div>
+      <h3>本格的な物理エンジン</h3>
+      <p>描いた形・大きさで走り方が本当に変わります。「どんな形が速い？」という問いが、自然と生まれます。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><img src="assets/features/garage.png" alt="ガレージに停まったかわいい車のイラスト" loading="lazy"></div>
+      <h3>作品はガレージに保存</h3>
+      <p>お気に入りのクルマは名前をつけてガレージに保存。「じぶんのコレクション」が創作意欲を後押しします。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><img src="assets/features/music.png" alt="スピーカーと音符のイラスト" loading="lazy"></div>
+      <h3>楽しい音と音楽</h3>
+      <p>ごきげんなBGMとジャンプの効果音つき。外出先などではワンタップでオフにできます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEMO ============ -->
+<section class="section demo" id="demo">
+  <h2 class="section-title"><span class="title-deco">🚗</span> まずは、この場で体験してみてください</h2>
+  <p class="section-lead">「絵が動く」ってこういうこと。クルマの車体を描いて、ボタンを押してみてください。<br>お子さまと一緒ならなお楽しい！</p>
+  <div class="demo-box">
+    <div class="demo-draw" id="demoDraw">
+      <div class="palette" id="palette"></div>
+      <canvas id="drawCanvas" width="640" height="400"></canvas>
+      <div class="demo-controls">
+        <button class="btn-clear" id="btnClear" type="button">🧽 けす</button>
+        <button class="btn-go" id="btnGo" type="button">🚗 はしらせる！</button>
+      </div>
+    </div>
+    <div class="demo-run" id="demoRun" hidden>
+      <div class="run-stage" id="runStage">
+        <div class="run-clouds"><span>☁️</span><span>☁️</span></div>
+        <div class="run-car" id="runCar"></div>
+        <div class="run-grass"></div>
+        <div class="run-soil"></div>
+        <div class="run-goal" id="runGoal" hidden>🎉 ゴール！ 🎉</div>
+      </div>
+      <div class="demo-controls">
+        <button class="btn-clear" id="btnBack" type="button">🖍️ かきなおす</button>
+        <button class="btn-go" id="btnAgain" type="button">↻ もういちど</button>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">※ これは簡易的なミニ体験です。アプリ本体では、物理エンジンによって描いた形どおりに挙動が変わり、でこぼこ道を本格的に走ります。</p>
+</section>
+
+<!-- ============ PARENTS ============ -->
+<section class="section parents" id="parents">
+  <h2 class="section-title"><span class="title-deco">🛡️</span> 保護者の方へ ― 安心して遊ばせられる設計</h2>
+  <div class="parents-grid">
+    <div class="parent-item">
+      <span class="parent-icon">🔤</span>
+      <div><h3>ひらがな中心のやさしい画面</h3><p>文字が読み始めのお子さまでも迷わないよう、アプリ内の表示はひらがな中心・大きなボタンで統一しています。</p></div>
+    </div>
+    <div class="parent-item">
+      <span class="parent-icon">🧒</span>
+      <div><h3>子ども向け広告設定</h3><p>広告は子ども向けコンテンツ基準(全年齢レーティング)に準拠した設定のみを使用します。</p></div>
+    </div>
+    <div class="parent-item">
+      <span class="parent-icon">🔒</span>
+      <div><h3>保護者ゲート</h3><p>購入などの大人向け操作には保護者ゲートを設け、お子さまが誤ってタップしても進めない設計です。</p></div>
+    </div>
+    <div class="parent-item">
+      <span class="parent-icon">⏱️</span>
+      <div><h3>1プレイ約20秒で区切りやすい</h3><p>1回の走行は約20秒。遊びの区切りが明確なので、「あと1回だけね」の約束がしやすい設計です。</p></div>
+    </div>
+    <div class="parent-item">
+      <span class="parent-icon">🔇</span>
+      <div><h3>音はワンタップでオフ</h3><p>外出先や静かにしたい場面のために、BGM・効果音はワンタップで消せます。設定は次回起動時も保持されます。</p></div>
+    </div>
+    <div class="parent-item">
+      <span class="parent-icon">📱</span>
+      <div><h3>縦でも横でも</h3><p>端末の向きを固定しないので、お子さまの持ちやすい向きでそのまま遊べます。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq">
+  <h2 class="section-title"><span class="title-deco">❓</span> よくある質問</h2>
+  <div class="faq-list">
+    <details>
+      <summary>対象年齢は何歳くらいですか？</summary>
+      <p>3歳前後の幼児〜未就学児を主な対象に設計しています。お絵描きができれば遊べるので、もっと小さいお子さまでも保護者の方と一緒に楽しめます。</p>
+    </details>
+    <details>
+      <summary>いつ公開されますか？</summary>
+      <p>現在開発の最終段階です。まずは Android (Google Play) から公開し、iOS 版は後日対応予定です。</p>
+    </details>
+    <details>
+      <summary>料金はかかりますか？</summary>
+      <p>基本プレイは無料の予定です。ガレージへの保存台数を増やす買い切りオプションを予定しています(月額課金はありません)。</p>
+    </details>
+    <details>
+      <summary>インターネット接続は必要ですか？</summary>
+      <p>お絵描きもレースも端末内で動くため、オフラインでも遊べます。</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="cta">
+  <div class="cta-inner">
+    <h2>「自分の絵が動く」体験を、まもなく。</h2>
+    <p>「おえかきくるま」は近日公開予定です。お子さまの"はじめての作品が走る日"を、お楽しみに。</p>
+    <div class="store-badges center">
+      <div class="store-badge coming">
+        <span class="store-icon">▶</span>
+        <span class="store-text"><small>Google Play</small><strong>近日公開</strong></span>
+      </div>
+      <div class="store-badge coming soon2">
+        <span class="store-icon"></span>
+        <span class="store-text"><small>App Store</small><strong>準備中</strong></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p class="footer-logo">🖍️ おえかきくるま</p>
+  <p class="footer-copy">&copy; 2026 おえかきくるま</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
