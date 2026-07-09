@@ -459,6 +459,9 @@ h1, h2, h3 { line-height: 1.35; }
 /* ---------------- Footer ---------------- */
 .site-footer { text-align: center; padding: 34px 20px; background: #4E342E; color: #FFE0B2; }
 .footer-logo { font-weight: 900; font-size: 1.1rem; margin-bottom: 6px; }
+.footer-links { font-size: 0.85rem; margin-bottom: 6px; }
+.footer-links a { text-decoration: underline; opacity: 0.9; }
+.footer-links a:hover { opacity: 1; color: #FFD740; }
 .footer-copy { font-size: 0.8rem; opacity: 0.8; }
 
 /* ---------------- Responsive ---------------- */
